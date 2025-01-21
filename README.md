@@ -10,7 +10,7 @@ Diseño de un programa con IP Cores para cambiar el color, en caso de desearlo, 
 - **Monitor con entrada HDMI**: Para visualizar la imagen modificada.
 - **Fuente de señal HDMI**: Un ordenador o dispositivo con salida HDMI que sirva de fuente de imagen.
 - **Cables HDMI**: Para conectar la fuente de señal HDMI a la placa PYNQ-Z2 y la salida HDMI del PYNQ-Z2 al monitor.
-- **Cable Ethernet**: Para accedeer a Jupyter en la PYNQ-Z2.
+- **Cable Ethernet**: Para acceder a Jupyter en la PYNQ-Z2.
 
 ### Requisitos de Software
 - **Vivado** (versión 2022.1): Necesario para el diseño y síntesis del sistema FPGA, así como para la creación de los IP Cores y la configuración del diagrama de bloques.
