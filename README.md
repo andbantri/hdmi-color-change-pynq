@@ -24,7 +24,7 @@ Diseño de un programa con IP Cores para cambiar el color, en caso de desearlo, 
   - `pynq.lib.AxiGPIO`: Para interactuar con los GPIO de la FPGA, los switches.
 
 ### Requisitos de configuración
-- El entorno de desarrollo debe estar configurado para trabajar con el FPGA y los IP Cores utilizados en el proyecto.
+- El entorno de desarrollo debe estar configurado para trabajar con la FPGA y los IP Cores utilizados en el proyecto.
 - La placa PYNQ-Z2 debe arrancarse* desde la tarjeta SD, asegurándose de que la imagen de arranque de PYNQ esté correctamente instalada en ella.
 - Para acceder a Jupyter, la placa PYNQ-Z2 debe estar conectada a la red local a través del cable Ethernet.
 - Es necesario **cargar el archivo `.bit`** y el archivo **`.hwh`** generados en Vivado en la placa PYNQ-Z2 para que el diseño y los IP Cores funcionen correctamente. 
