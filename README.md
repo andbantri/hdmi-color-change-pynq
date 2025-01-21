@@ -17,7 +17,7 @@ Diseño de un programa con IP Cores para cambiar el color, en caso de desearlo, 
 ### Control del procesamiento:
 - Permitir al usuario decidir si realizar o no el cambio de color.
 ### Procesamiento en tiempo real:
-- Garantizar que el procesamiento de cada frame video sea continuo y sin interrupciones.
+- Garantizar que el procesamiento de cada frame sea continuo y sin interrupciones.
 ### Compatibilidad con resoluciones comunes:
 - Soportar al menos resoluciones de 720p y 1080p.
 
@@ -38,3 +38,4 @@ El notebook empleado `hdmi_prueba.ipynb` se ubica en \jupyter
 Clona el repositorio a tu máquina local para obtener todos los archivos necesarios:
 ```bash
 git clone https://github.com/AndreaUGR/dise-o_cambio_color.git
+
