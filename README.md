@@ -6,7 +6,7 @@ Diseño de un programa con IP Cores para cambiar el color, en caso de desearlo, 
 
 ## Requisitos
 ### Requisitos de Hardware
-- **Placa PYNQ-Z2**: La placa debe tener puertos HDMI de entrada y salida para recibir y mostrar la señal de video.
+- **Placa PYNQ-Z2**: Emplearemos los puertos HDMI de entrada y salida para recibir y mostrar la señal/imagen.
 - **Monitor con entrada HDMI**: Para visualizar la imagen modificada.
 - **Fuente de señal HDMI**: Un ordenador o dispositivo con salida HDMI que sirva de fuente de imagen.
 - **Cables HDMI**: Para conectar la fuente de señal HDMI a la placa PYNQ-Z2 y la salida HDMI del PYNQ-Z2 al monitor.
