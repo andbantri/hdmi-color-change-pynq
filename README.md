@@ -3,6 +3,7 @@ Diseño de un programa con IP core que cambia el color de una imagen (HDMI PYNQ-
 
 ## Objetivo
 Diseño de un programa con IP Cores para cambiar el color, en caso de desearlo, de una imagen/señal de un ordenador recibida a través de HDMI. El objetivo es modificar los colores de cada píxel en la imagen y visualizar el resultado en una pantalla auxiliar conectada a la salida HDMI de la placa PYNQ.
+<br><br>
 
 ## Requisitos
 ### Requisitos de Hardware
@@ -28,6 +29,7 @@ Diseño de un programa con IP Cores para cambiar el color, en caso de desearlo, 
 - La placa PYNQ-Z2 debe arrancarse* desde la tarjeta SD, asegurándose de que la imagen de arranque de PYNQ esté correctamente instalada en ella.
 - Para acceder a Jupyter, la placa PYNQ-Z2 debe estar conectada a la red local a través del cable Ethernet.
 - Es necesario **cargar el archivo `.bit`** y el archivo **`.hwh`** generados en Vivado en la placa PYNQ-Z2 para que el diseño y los IP Cores funcionen correctamente. 
+  <br><br>
   
 ## Estructura del proyecto
 ### Vivado
@@ -40,6 +42,19 @@ Este proyecto emplea dos repositorios ip, localizados en: \vivado\prueba\PYNQ\bo
 
 ### Jupyter Notebook
 El notebook empleado `hdmi_prueba.ipynb` se ubica en \jupyter
+<br><br>
+
+## IP Core "color"
+Este IP Core está diseñado para recibir una señal de video en formato RGB y modificar el color de los píxeles de la imagen. Se implementó utilizando **Vitis HLS** y se integra con otros componentes del sistema FPGA en Vivado.
+
+### Funciones principales:
+#### Si alguno o los dos switches de la PYNQ estan a 0:
+- recibe la señal de video en formato de 24 bits por píxel (RGB) y la envia sin modificar hacia la salida HDMI.
+#### Si los dos switches de la PYNQ estan a 1:
+- Modifica los valores de los píxeles de la señal HDMI en tiempo real.
+- Ajusta los valores RGB para proporcionar los pixeles en escala de grises.
+- Recibe la señal de video en formato de 24 bits por píxel (RGB) y la procesa para transmitirla modificada a la salida HDMI.
+<br><br>
 
 ## Instrucciones
 ### Clonar el repositorio
