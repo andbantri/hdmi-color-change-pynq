@@ -12,16 +12,12 @@ Diseño de un programa con IP Cores para cambiar el color, en caso de desearlo, 
 ## Requisitos
 ### Entrada y salida de video:
 - Capturar video de entrada a través del puerto HDMI y devolver el video procesado al puerto HDMI de salida.
-
 ### Procesamiento de color:
 - Implementar funciones básicas de cambio de color: escala de grises.
-
 ### Control del procesamiento:
 - Permitir al usuario decidir si realizar o no el cambio de color.
-
 ### Procesamiento en tiempo real:
-- Garantizar que el procesamiento de cada cuadro de video sea continuo y sin interrupciones.
-
+- Garantizar que el procesamiento de cada frame video sea continuo y sin interrupciones.
 ### Compatibilidad con resoluciones comunes:
 - Soportar al menos resoluciones de 720p y 1080p.
 
