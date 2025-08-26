@@ -63,5 +63,5 @@ Se implementó utilizando **Vitis HLS** y se integra con los demás componentes 
 ### Clonar el repositorio
 Clona el repositorio a tu máquina local para obtener todos los archivos necesarios:
 ```bash
-git clone https://github.com/AndreaUGR/dise-o_cambio_color.git
+git clone https://github.com/AndreaUGR/hdmi-color-change-pynq.git
 
