@@ -1,67 +1,60 @@
-# Real-time hdmi color change
-Diseño de un sistema basado en IP Core para la FPGA PYNQ-Z2 que procesa señales de video HDMI y modifica los valores de color de cada píxel en tiempo real.
-<br><br>
-## Objetivo
-Diseñar e implementar un sistema basado en IP Cores sobre la FPGA de la placa PYNQ-Z2 que permita modificar selectivamente los valores de color de cada píxel de una señal de video digital recibida vía HDMI desde un ordenador. El sistema procesará la señal de video en tiempo real, aplicando transformaciones de color como conversión a escala de grises, y transmitirá la señal resultante a un monitor auxiliar conectado a la salida HDMI de la placa. La activación de la modificación de color se controlará mediante los switches de la PYNQ-Z2, permitiendo alternar entre la señal original y la señal procesada.
-<br><br>
-
-## Requisitos
-### Requisitos de Hardware
-- **Placa PYNQ-Z2**: Plataforma FPGA utilizada para el procesamiento de la señal HDMI; se emplean sus puertos HDMI de entrada y salida para recibir y transmitir la señal de video en tiempo real.  
-- **Monitor con entrada HDMI**: Para visualizar la señal de video procesada por la FPGA.  
-- **Fuente de señal HDMI**: Ordenador u otro dispositivo con salida HDMI que proporcione la señal de video original.  
-- **Cables HDMI**: Conexión entre la fuente de señal y la entrada HDMI de la PYNQ-Z2, así como entre la salida HDMI de la placa y el monitor.  
-- **Cable Ethernet**: Para establecer comunicación con la PYNQ-Z2 y acceder al entorno Jupyter Notebook, permitiendo control y monitoreo del sistema.
-
-### Requisitos de Software
-- **Vivado (versión 2022.1)**: Entorno de desarrollo FPGA utilizado para el diseño, síntesis y generación del bitstream del sistema, así como para la creación, configuración e integración de los IP Cores en el diagrama de bloques.  
-- **Vitis HLS**: Herramienta de síntesis de alto nivel para diseñar y generar el IP Core encargado del procesamiento y modificación de los valores de color de la señal HDMI en tiempo real.  
-- **Jupyter Notebook**: Entorno de control y ejecución sobre la PYNQ-Z2 que permite cargar el bitstream, gestionar los IP Cores y monitorear el procesamiento de la señal de video.
-
-### Dependencias adicionales
-- **Bibliotecas de Python**:  
-  - `pynq`: Biblioteca principal para la interacción con la placa PYNQ-Z2, carga del bitstream y gestión de los recursos de la FPGA.  
-  - `pynq.lib.video`: Para la captura, procesamiento y transmisión de señales de video HDMI en tiempo real.  
-  - `pynq.lib.AxiGPIO`: Para la interacción con los periféricos de la FPGA, incluyendo la lectura de switches y control de GPIO.
+# Real-time HDMI Color Change
+Design of an IP Core-based system for the PYNQ-Z2 FPGA that processes HDMI video signals and modifies the color values of each pixel in real time.  
 
 
-### Requisitos de configuración
-- El entorno de desarrollo debe estar correctamente configurado para soportar la FPGA y los IP Cores implementados en el proyecto.  
-- La placa PYNQ-Z2 debe iniciarse desde la tarjeta SD, asegurándose de que la imagen de arranque de PYNQ esté correctamente instalada y operativa.  
-- Para acceder al entorno Jupyter Notebook, la PYNQ-Z2 debe estar conectada a la red local mediante un cable Ethernet.  
-- Es necesario **cargar en la FPGA los archivos `.bit` y `.hwh`** generados en Vivado, los cuales contienen la configuración del diseño y la descripción de los IP Cores, garantizando el correcto funcionamiento del sistema.
-  <br><br>
-  
-## Estructura del proyecto
+## Objective
+Design and implement an IP Core-based system on the PYNQ-Z2 FPGA board that allows selective modification of the color values of each pixel in a digital video signal received via HDMI from a computer. The system will process the video signal in real time, applying color transformations such as grayscale conversion, and transmit the resulting signal to an auxiliary monitor connected to the board’s HDMI output. The activation of the color modification will be controlled via the PYNQ-Z2 switches, allowing switching between the original and processed signals.  
+<br>
+
+## Requirements
+### Hardware
+- **PYNQ-Z2 Board**: FPGA platform used for HDMI signal processing; its HDMI input and output ports are used to receive and transmit the video signal in real time.  
+- **Monitor with HDMI input**: To display the video signal processed by the FPGA.  
+- **HDMI Signal Source**: Computer or other device with HDMI output providing the original video signal.  
+- **HDMI Cables**: To connect the signal source to the PYNQ-Z2 HDMI input and the board HDMI output to the monitor.  
+- **Ethernet Cable**: To communicate with the PYNQ-Z2 and access the Jupyter Notebook environment for system control and monitoring.  
+### Software
+- **Vivado (version 2022.1)**: FPGA development environment used for design, synthesis, and bitstream generation, as well as for creating, configuring, and integrating IP Cores in the block diagram.  
+- **Vitis HLS**: High-Level Synthesis tool used to design and generate the IP Core responsible for processing and modifying the HDMI signal’s color values in real time.  
+- **Jupyter Notebook**: Control and execution environment on the PYNQ-Z2 that allows loading the bitstream, managing IP Cores, and monitoring video signal processing.  
+### Additional Dependencies
+- **Python Libraries**:  
+  - `pynq`: Main library for interacting with the PYNQ-Z2 board, loading the bitstream, and managing FPGA resources.  
+  - `pynq.lib.video`: For real-time HDMI video signal capture, processing, and transmission.  
+  - `pynq.lib.AxiGPIO`: For interacting with FPGA peripherals, including reading switches and GPIO control.  
+### Configuration
+- The development environment must be properly configured to support the FPGA and IP Cores implemented in the project.  
+- The PYNQ-Z2 board must boot from the SD card, ensuring the PYNQ boot image is correctly installed and operational.  
+- To access the Jupyter Notebook environment, the PYNQ-Z2 must be connected to the local network via an Ethernet cable.  
+- The FPGA must **load the `.bit` and `.hwh` files** generated in Vivado, which contain the design configuration and IP Core descriptions, ensuring proper system functionality.  
+<br>
+
+## Project Structure
 ### Vivado
-El archivo del proyecto `.xpr` se encuentra en: `\vivado\prueba\PYNQ\boards\Pynq-Z2\base`.  
-
-El proyecto utiliza dos repositorios de IP localizados en: `\vivado\prueba\PYNQ\boards`  
-
-- **ip**: Contiene los IP Cores necesarios para la captura, procesamiento y transmisión de la señal HDMI.  
-- **color**: Contiene el IP Core responsable de la modificación de color de la señal de video.  
-
+The project file `.xpr` is located at: `\vivado\prueba\PYNQ\boards\Pynq-Z2\base`.  
+The project uses two IP repositories located at: `\vivado\prueba\PYNQ\boards`  
+- **ip**: Contains the IP Cores required for HDMI signal capture, processing, and transmission.  
+- **color**: Contains the IP Core responsible for modifying the video signal’s color.  
 ### Jupyter Notebook
-El notebook utilizado `hdmi_prueba.ipynb` se encuentra en: `\jupyter`.  
-Se emplea para cargar el bitstream en la FPGA, configurar los IP Cores y controlar el procesamiento de la señal HDMI en tiempo real.  
+The notebook `hdmi_prueba.ipynb` is located at: `\jupyter`.  
+It is used to load the bitstream onto the FPGA, configure the IP Cores, and control real-time HDMI signal processing.  
 <br>
+
 ## IP Core "color"
-Este IP Core está diseñado para recibir una señal de video en formato RGB de 24 bits por píxel y modificar los valores de color de cada píxel.  
-Se implementó utilizando **Vitis HLS** y se integra con los demás componentes del sistema FPGA a través de Vivado.  
-
-### Funciones principales:
-
-#### Si alguno o ambos switches de la PYNQ están en 0:
-- La señal de video se recibe y transmite hacia la salida HDMI **sin modificación**.  
-
-#### Si ambos switches de la PYNQ están en 1:
-- Modifica los valores de cada píxel de la señal HDMI en **tiempo real**.  
-- Ajusta los valores RGB para convertir los píxeles a **escala de grises**.  
-- Procesa la señal de video de 24 bits por píxel y la transmite modificada a la salida HDMI.
+This IP Core is designed to receive a 24-bit RGB video signal and modify the color values of each pixel.  
+It was implemented using **Vitis HLS** and integrates with the FPGA system components via Vivado.  
+### Main Functions:
+#### If one or both PYNQ switches are 0:
+- The video signal is received and transmitted to the HDMI output **without modification**.  
+#### If both PYNQ switches are 1:
+- Modifies the color values of each pixel in the HDMI signal **in real time**.  
+- Adjusts RGB values to convert pixels to **grayscale**.  
+- Processes the 24-bit per pixel video signal and transmits the modified signal to the HDMI output.  
 <br>
-## Instrucciones
-### Clonar el repositorio
-Clona el repositorio a tu máquina local para obtener todos los archivos necesarios:
+
+## Instructions
+### Clone the Repository
+Clone the repository to your local machine to obtain all necessary files:  
 ```bash
 git clone https://github.com/AndreaUGR/hdmi-color-change-pynq.git
 
