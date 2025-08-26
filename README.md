@@ -1,9 +1,9 @@
 # Real-time hdmi color change
 Diseño de un sistema basado en IP Core para la FPGA PYNQ-Z2 que procesa señales de video HDMI y modifica los valores de color de cada píxel en tiempo real.
-<br>
+<br><br>
 ## Objetivo
 Diseñar e implementar un sistema basado en IP Cores sobre la FPGA de la placa PYNQ-Z2 que permita modificar selectivamente los valores de color de cada píxel de una señal de video digital recibida vía HDMI desde un ordenador. El sistema procesará la señal de video en tiempo real, aplicando transformaciones de color como conversión a escala de grises, y transmitirá la señal resultante a un monitor auxiliar conectado a la salida HDMI de la placa. La activación de la modificación de color se controlará mediante los switches de la PYNQ-Z2, permitiendo alternar entre la señal original y la señal procesada.
-<br>
+<br><br>
 
 ## Requisitos
 ### Requisitos de Hardware
@@ -30,7 +30,7 @@ Diseñar e implementar un sistema basado en IP Cores sobre la FPGA de la placa P
 - La placa PYNQ-Z2 debe iniciarse desde la tarjeta SD, asegurándose de que la imagen de arranque de PYNQ esté correctamente instalada y operativa.  
 - Para acceder al entorno Jupyter Notebook, la PYNQ-Z2 debe estar conectada a la red local mediante un cable Ethernet.  
 - Es necesario **cargar en la FPGA los archivos `.bit` y `.hwh`** generados en Vivado, los cuales contienen la configuración del diseño y la descripción de los IP Cores, garantizando el correcto funcionamiento del sistema.
-  <br>
+  <br><br>
   
 ## Estructura del proyecto
 ### Vivado
@@ -59,7 +59,6 @@ Se implementó utilizando **Vitis HLS** y se integra con los demás componentes 
 - Ajusta los valores RGB para convertir los píxeles a **escala de grises**.  
 - Procesa la señal de video de 24 bits por píxel y la transmite modificada a la salida HDMI.
 <br>
-
 ## Instrucciones
 ### Clonar el repositorio
 Clona el repositorio a tu máquina local para obtener todos los archivos necesarios:
