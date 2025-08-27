@@ -56,5 +56,5 @@ It was implemented using **Vitis HLS** and integrates with the FPGA system compo
 ### Clone the Repository
 Clone the repository to your local machine to obtain all necessary files:  
 ```bash
-git clone https://github.com/AndreaUGR/hdmi-color-change-pynq.git
+git clone https://github.com/andbantri/hdmi-color-change-pynq.git
 
